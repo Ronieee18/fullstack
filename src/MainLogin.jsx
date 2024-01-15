@@ -5,7 +5,7 @@ import { useNavigate ,Link} from 'react-router-dom'
 import {login as storeLogin} from './store/authSlice'
 import { useForm } from 'react-hook-form'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faUser,faEnvelope,faLock,faKey} from '@fortawesome/free-solid-svg-icons'
+import {faUser,faEnvelope,faLock,faEye} from '@fortawesome/free-solid-svg-icons'
 
 function Login() {
     const [showpass,setShowPass]=useState(false)
@@ -31,10 +31,10 @@ function Login() {
         }
     }
   return (
-    <div className='flex flex-col gap-10  bg-[rgb(255,255,255,.4)] backdrop-blur-xl max-w-[30%]  m-auto   items-center p-3'>
-        <h1 className='text-3xl font-serif'>Login  Now</h1>
+    <div className='flex flex-col gap-10  bg-[rgb(255,255,255,.4)] backdrop-blur-xl max-w-[50%] justify-center   mx-auto     p-3' >
+        <h1 className='text-3xl font-serif text-center'>Login  Now</h1>
        <form onSubmit={handleSubmit(login)} className='flex flex-col gap-6  '>
-        <div className='flex '>
+        <div className='flex items-center p-1.5 '>
         <FontAwesomeIcon icon={faEnvelope} className='mt-3 mr-2' />          
         <input type="email" placeholder='email'  className='flex w-full justify-center items-center p-2 border border-black'
         {...register("email",{
@@ -47,18 +47,23 @@ function Login() {
         />
         
         </div>
-        <div className='flex '>
+        <div className='relative flex items-center p-2 '>
         <FontAwesomeIcon icon={faLock} className='mt-3 mr-2'/>          
         <input type={showpass?"text":'password'} placeholder='password'  className='flex w-full   justify-center items-center p-2 border border-black'
         {...register("password",{
             required:true
         })}
         />
-        <FontAwesomeIcon icon={faKey} className='absolute inline-block ml-48 mt-3 cursor-pointer ' title='show password'  onClick={()=>setShowPass((prev)=>(!prev))} />
+        <span className='absolute inline-block right-4 bottom-4  mt-3 cursor-pointer' title='show password'>
+
+            <FontAwesomeIcon icon={faEye} className='text-gray-600' onClick={() => setShowPass((prev) => (!prev))} />
+          </span>
         </div>
 
-        <button className='ml-16  text-2xl font-sans bg-blue-500 text-white p-2 hover:bg-blue-400 w-5/12'>Login</button>
+        <button className='grid  sm:w-full sm:m-auto   text-2xl font-sans bg-blue-500 text-white p-2 hover:bg-blue-400 '>Login</button>
         <p className=' font-serif'>Don't have an account?  <Link to="/sign-up" className='transition-all duration-40  0 hover:underline'>Sign up</Link></p>
+        <p className=''>TRY: <u>Email: demo123@gmail.com <br />
+        password:ronit123</u>   </p>
         </form>
       </div>
   )

@@ -9,6 +9,7 @@ export class Authentication{
             .setEndpoint(conf.appwriteURL)
             .setProject(conf.appwriteProjectID)
         this.account=new Account(this.client)
+
     }
     
     async createAccount({email,password,name}){

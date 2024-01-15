@@ -15,16 +15,20 @@ function Currency() {
     setconvertAmount(amount)
   }
   const convert=()=>{
-    setconvertAmount((amount*currencyInfo[to]))
+    const convertedAmount = (amount * currencyInfo[to]).toFixed(2);
+  setconvertAmount(parseFloat(convertedAmount));
   }
   return (
     <>
+        <div className='flex flex-col items-center justify-center h-screen '>
+
     <h1 className='text-center p-2 ml-5 text-3xl'>Currency Converter</h1>
-      <div className=' p-3 bg-[antiquewhite] absolute  left-1/3 border-2 	border-black	rounded-lg  	 	'>
-    <div>
+    <div className='flex justify-center   '>
+    <div className='flex flex-col items-center  w-full sm:w-[30rem]   justify-center   p-6 bg-[antiquewhite] border-2 border-black rounded-lg'>
+    <div className='w-full mb-4'>
       <InpBox
       
-       label='From'
+       label='From' 
        amount={amount}
        currencyOptions={options}  
        selectCurrency={from}
@@ -34,12 +38,12 @@ function Currency() {
          
          />
          </div>
-         <hr className="h-px   border-0 dark:bg-gray-300"/>
+         <hr className="w-full h-px my-2 border-0 bg-gray-300" />
 
          <button onClick={swap} className='bg-blue-600 my-1 text-white p-2 rounded-md ml-38'>swap</button>
-         <hr className="h-px   border-0 dark:bg-gray-400"/>
+         <hr className="w-full h-px my-2 border-0 bg-gray-300" />
 
-         <div>
+         <div className='w-full mb-4'>
       <InpBox
        label={'To'}
        onCurrencyChange={(currency)=>{setTo(currency)}}
@@ -51,8 +55,11 @@ function Currency() {
       </div>
       <button 
       onClick={convert}
-      className=' mt-2 p-2 text-lg text-white hover:bg-blue-400  text-center border-2 bg-blue-600  w-72 border-white ml-2'>Convert {from} to {to}</button>
+      className='w-full mt-2 p-2 text-lg text-white hover:bg-blue-400  text-center border-2 bg-blue-600 border-white'>Convert {from} to {to}</button>
       </div>
+      </div>
+      </div>
+
       
       
     </>
