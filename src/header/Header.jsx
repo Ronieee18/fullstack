@@ -54,10 +54,17 @@ function Header() {
     <header className='flex items-center  pl-15 pt-13   text-white'>
     <img className="logo p-0 mr-auto ml-2 cursor-pointer max-h-[90px] max-w-full" src={logo} alt="logo"/>
     <nav >
-    <img src="https://img.icons8.com/?size=100&id=8113&format=png" isMenuOpen={isMenuOpen} onClick={()=>setIsMenuOpen(!isMenuOpen)}
-     className={`menu z-20 transition ease-in-out delay-500  `   }alt="" />
+        <div >
+        <input className={`menu z-20 transition ease-in-out delay-500  `   } isMenuOpen={isMenuOpen} onClick={()=>setIsMenuOpen(!isMenuOpen)} id="checkbox" type="checkbox"/>
+    <label class="toggle" for="checkbox">
+        <div id="bar1" class="bars"></div>
+        <div id="bar2" class="bars"></div>
+        <div id="bar3" class="bars"></div>
+    </label>
+        </div>
+    
 
-      <ul  className={` font-semibold z-10  resp max-[900px]:${isMenuOpen?'block':'none'} transition ease-in-out delay-500  `}>
+      <ul  className={` font-semibold z-1  resp max-[900px]:${isMenuOpen?'block':'none'} transition ease-in-out delay-500  `}>
         {console.log(isMenuOpen)}
         {
             
