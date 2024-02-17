@@ -11,6 +11,7 @@ import MainHome from './MainHome.jsx'
 import Todo from './pages/Todo.jsx'
 import Currency from './pages/Currency.jsx'
 import Authlayout from './Authlayout.jsx'
+import Pass from './pages/Password.jsx'
 const router=createBrowserRouter([
   {
     path:'/',
@@ -44,6 +45,14 @@ const router=createBrowserRouter([
         )
       },
       {
+        path:'/password',
+        element:(
+          <Authlayout authentication>
+            <Pass/>
+          </Authlayout>
+        )
+      },
+      {
         path:'/services',
         element:(
           <Authlayout authentication>
@@ -52,7 +61,7 @@ const router=createBrowserRouter([
         )
       },
     ]
-
+    
 
     
   }

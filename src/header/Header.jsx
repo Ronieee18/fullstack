@@ -38,6 +38,12 @@ function Header() {
 
         },
         {
+            name:'Password Generator',
+            slug:'/password',
+            active:authStatus,
+
+        },
+        {
             name:'Currency Converter',
             slug:'/services',
             active:authStatus,
