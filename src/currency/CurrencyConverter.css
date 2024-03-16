@@ -1,0 +1,119 @@
+
+
+.converter-title {
+    text-align: center;
+}
+
+.input-container,
+.select-container,
+.result-container {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.conversion-result {
+    font-weight: bold;
+    text-align: center;
+}
+
+.currency-converter-container {
+    width: 400px;
+    background-color: lightpink;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    position: relative; /* Added position relative */
+}
+
+.converter-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.input-container,
+.select-container,
+.result-container {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Style the select dropdown arrow */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 12l2.594 2.594a.75.75 0 101.062-1.062l-3-3a.75.75 0 00-1.062 0l-3 3a.75.75 0 101.062 1.062L9.5 12z' fill='%23333'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    cursor: pointer;
+}
+
+/* Style the select dropdown options */
+select:focus {
+    outline: none;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+.select-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+/* Style the select dropdown options */
+.select-dropdown option {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Show the dropdown menu on hover/focus */
+.select-container:hover .select-dropdown,
+.select-container:focus-within .select-dropdown {
+    display: block;
+}
+
+/* Hide the dropdown menu by default */
+.select-dropdown {
+    display: none;
+}
