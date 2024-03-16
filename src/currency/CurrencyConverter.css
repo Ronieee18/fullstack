@@ -34,7 +34,7 @@ select {
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px; 
     margin-top: 20px;
     font-family: Arial, sans-serif;
     position: relative; /* Added position relative */
